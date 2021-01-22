@@ -15,20 +15,26 @@ const Addtrade = () => {
 	return (
 		<div>
 			<form>
-				<input
-					type='text'
-					name='text'
-					placeholder='Add name'
-					value={text}
-					onChange={onChangeName}
-				/>
-				<input
-					type='number'
-					name='number'
-					placeholder='Add price'
-					value={price}
-					onChange={onChangePrice}
-				/>
+				<label>
+					Stock :
+					<input
+						type='text'
+						name='text'
+						placeholder='Add name'
+						value={text}
+						onChange={onChangeName}
+					/>
+				</label>
+				<label>
+					Price :
+					<input
+						type='number'
+						name='number'
+						placeholder='Add price'
+						value={price}
+						onChange={onChangePrice}
+					/>
+				</label>
 			</form>
 		</div>
 	);
