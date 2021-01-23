@@ -1,1 +1,21 @@
+#eiknx {
+	margin-bottom: 30px;
+}
 
+.rukas {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.rukas > label {
+	margin: 6px;
+}
+
+.rukas > label > input {
+	margin-left: 10px;
+}
+
+.pzdc {
+	margin-top: 10px;
+}

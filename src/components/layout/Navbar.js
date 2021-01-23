@@ -22,11 +22,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function ButtonAppBar() {
+const Navbar = () => {
 	const classes = useStyles();
 
 	return (
-		<div className={classes.root}>
+		<div className={classes.root} id='eiknx'>
 			<AppBar position='static' style={{ background: '#1B7F8E' }}>
 				<Toolbar>
 					<IconButton
@@ -45,4 +45,6 @@ export default function ButtonAppBar() {
 			</AppBar>
 		</div>
 	);
-}
+};
+
+export default Navbar;
