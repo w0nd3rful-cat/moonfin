@@ -1,0 +1,54 @@
+const onChangePriceBuy = (e) => {
+		setPriceBuy(e.target.value);
+	};
+
+	const onChangePriceSell = (e) => {
+		setPriceSell(e.target.value);
+	};
+
+	const onChangeFees = (e) => {
+		setFees(e.target.value);
+	};
+
+
+    setPriceBuy('');
+		setPriceSell('');
+		setFees('');
+
+
+        const [priceBuy, setPriceBuy] = useState('');
+	const [priceSell, setPriceSell] = useState('');
+	const [fees, setFees] = useState('');
+
+
+
+	<label>
+					Price Buy:
+					<input
+						type='number'
+						name='number'
+						placeholder='Add price baught'
+						value={priceBuy}
+						onChange={onChangePriceBuy}
+					/>
+				</label>
+				<label>
+					Price Sell:&nbsp;
+					<input
+						type='number'
+						name='number'
+						placeholder='Add price sold'
+						value={priceSell}
+						onChange={onChangePriceSell}
+					/>
+				</label>
+				<label>
+					Fees : &nbsp; &nbsp; &nbsp; &nbsp;
+					<input
+						type='number'
+						name='number'
+						placeholder='Add fees'
+						value={fees}
+						onChange={onChangeFees}
+					/>
+				</label>

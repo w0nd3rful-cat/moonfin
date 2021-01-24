@@ -1,32 +1,33 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const Addtrade = () => {
 	const [stock, setStock] = useState('');
-	const [priceBuy, setPriceBuy] = useState('');
-	const [priceSell, setPriceSell] = useState('');
-	const [fees, setFees] = useState('');
+	const [alert, setAlert] = useState('');
 
 	const onChangeStock = (e) => {
 		setStock(e.target.value);
 	};
 
-	const onChangePriceBuy = (e) => {
-		setPriceBuy(e.target.value);
-	};
+	const newTrade = (e) => {
+		e.preventDefault();
 
-	const onChangePriceSell = (e) => {
-		setPriceSell(e.target.value);
-	};
-
-	const onChangeFees = (e) => {
-		setFees(e.target.value);
+		if (stock) localStorage.setItem(uuidv4(), stock);
+		else {
+			setAlert('Eik nx ivesk kazka');
+			setTimeout(function () {
+				setAlert('');
+			}, 1500);
+		}
+		setStock('');
 	};
 
 	return (
 		<div>
-			<form className='rukas'>
+			{alert}
+			<form onSubmit={newTrade} className='rukas'>
 				<label>
-					Stock :
+					Stock : &nbsp; &nbsp; &nbsp;
 					<input
 						type='text'
 						name='text'
@@ -35,36 +36,7 @@ const Addtrade = () => {
 						onChange={onChangeStock}
 					/>
 				</label>
-				<label>
-					Price Buy:
-					<input
-						type='number'
-						name='number'
-						placeholder='Add price'
-						value={priceBuy}
-						onChange={onChangePriceBuy}
-					/>
-				</label>
-				<label>
-					Price Sell:
-					<input
-						type='number'
-						name='number'
-						placeholder='Add price'
-						value={priceSell}
-						onChange={onChangePriceSell}
-					/>
-				</label>
-				<label>
-					Fees :
-					<input
-						type='number'
-						name='number'
-						placeholder='Add price'
-						value={fees}
-						onChange={onChangeFees}
-					/>
-				</label>
+
 				<input type='submit' value='Submit' className='pzdc' />
 			</form>
 		</div>
