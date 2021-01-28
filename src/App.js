@@ -1,16 +1,19 @@
 import Navbar from './components/layout/Navbar';
-import Addtrade from './components/trades/Addtrade';
-import List from './components/trades/List';
+import Main from './components/Main';
+
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import './App.css';
 
 function App() {
 	return (
-		<div className='App'>
-			<Navbar />
-			<List />
-			<Addtrade />
-		</div>
+		<Router>
+			<div className='App'>
+				<Navbar />
+
+				<Main />
+			</div>
+		</Router>
 	);
 }
 

@@ -4,22 +4,30 @@ import { v4 as uuidv4 } from 'uuid';
 const Addtrade = () => {
 	const [stock, setStock] = useState('');
 	const [alert, setAlert] = useState('');
+	// const [stockUi, setStockUi] = useState('');
 
 	const onChangeStock = (e) => {
 		setStock(e.target.value);
 	};
 
-	const newTrade = (e) => {
+	function newTrade(e) {
 		e.preventDefault();
 
-		if (stock) localStorage.setItem(uuidv4(), stock);
-		else {
+		if (stock) {
+			let lol = uuidv4();
+
+			saveItem(lol, stock);
+			setStock('');
+		} else {
 			setAlert('Eik nx ivesk kazka');
 			setTimeout(function () {
 				setAlert('');
 			}, 1500);
 		}
-		setStock('');
+	}
+
+	const saveItem = (x, y) => {
+		localStorage.setItem(x, y);
 	};
 
 	return (

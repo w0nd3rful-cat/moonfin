@@ -1,18 +1,14 @@
 import React from 'react';
 
-const keys = Object.keys(localStorage);
-
-console.log(keys);
-
-const items = Object.values({ ...localStorage });
-
-console.log(items);
-
 const List = () => {
+	const entries = Object.entries(localStorage);
+
+	const deleteStock = () => {};
+
 	return (
 		<div>
-			{items.map((x) => {
-				return <h1>{x}</h1>;
+			{entries.map((x) => {
+				return <h1 key={x[0]}>{x[1]}</h1>;
 			})}
 		</div>
 	);
